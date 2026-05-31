@@ -23,7 +23,7 @@
                 <li><a href="index.html#easy-steps">How It Works</a></li>
                 <li><a href="index.html#success-stories">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="login-btn-header">Login</a></li>
+                <li><a href="https://my.freepressrelease.io/login" class="login-btn-header">Login</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -139,7 +139,7 @@
                     </div>
 
                     <p class="signup-link">
-                        Already filing stories? <a href="login.html">Sign in</a>
+                        Already filing stories? <a href="https://my.freepressrelease.io/login">Sign in</a>
                     </p>
                 </form>
             </div>
@@ -224,14 +224,18 @@
             label.textContent = 'Strength: ' + labels[score];
         });
 
-        // Submit
+        // Account creation is handled by the portal app (my.freepressrelease.io).
+        // Hand off there to register securely — credentials are never posted from
+        // the static site. The typed email is forwarded only as a prefill hint.
+        const APP_SIGNUP = 'https://my.freepressrelease.io/signup';
         document.getElementById('signupForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            console.log('Signup submitted');
+            const emailEl = document.getElementById('email');
+            const email = emailEl ? emailEl.value.trim() : '';
+            window.location.href = email ? `${APP_SIGNUP}?email=${encodeURIComponent(email)}` : APP_SIGNUP;
         });
-
-        document.querySelector('.google-btn')?.addEventListener('click', () => console.log('Google signup'));
-        document.querySelector('.facebook-btn')?.addEventListener('click', () => console.log('Facebook signup'));
+        document.querySelector('.google-btn')?.addEventListener('click', () => { window.location.href = APP_SIGNUP; });
+        document.querySelector('.facebook-btn')?.addEventListener('click', () => { window.location.href = APP_SIGNUP; });
     </script>
 </body>
 </html>

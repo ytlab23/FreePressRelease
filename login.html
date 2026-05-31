@@ -23,7 +23,7 @@
                 <li><a href="index.html#easy-steps">How It Works</a></li>
                 <li><a href="index.html#success-stories">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" class="login-btn-header active">Login</a></li>
+                <li><a href="https://my.freepressrelease.io/login" class="login-btn-header active">Login</a></li>
             </ul>
             <div class="hamburger">
                 <div class="line"></div>
@@ -74,7 +74,7 @@
                     <div class="form-group">
                         <div class="label-row">
                             <label for="password">Password</label>
-                            <a href="forgot-password.html" class="label-hint">Forgot?</a>
+                            <a href="https://my.freepressrelease.io/forgot-password" class="label-hint">Forgot?</a>
                         </div>
                         <div class="input-wrap">
                             <i class="fas fa-lock input-icon"></i>
@@ -90,7 +90,7 @@
                             <input type="checkbox" id="remember" name="remember">
                             <label for="remember">Keep me signed in</label>
                         </div>
-                        <a href="forgot-password.html" class="forgot-password">Reset password →</a>
+                        <a href="https://my.freepressrelease.io/forgot-password" class="forgot-password">Reset password →</a>
                     </div>
 
                     <button type="submit" class="auth-submit">
@@ -112,7 +112,7 @@
                     </div>
 
                     <p class="signup-link">
-                        New to the desk? <a href="signup.html">Create an account</a>
+                        New to the desk? <a href="https://my.freepressrelease.io/signup">Create an account</a>
                     </p>
                 </form>
             </div>
@@ -172,18 +172,17 @@
             });
         });
 
-        // Form submission
+        // Sign-in is handled by the portal app (my.freepressrelease.io). Hand off
+        // there to authenticate securely — credentials are never posted from the
+        // static site. The typed email is forwarded only as a prefill hint.
+        const APP_LOGIN = 'https://my.freepressrelease.io/login';
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            if (email && password) {
-                console.log('Login attempt with:', email);
-            }
+            const email = document.getElementById('email').value.trim();
+            window.location.href = email ? `${APP_LOGIN}?email=${encodeURIComponent(email)}` : APP_LOGIN;
         });
-
-        document.querySelector('.google-btn')?.addEventListener('click', () => console.log('Google login'));
-        document.querySelector('.facebook-btn')?.addEventListener('click', () => console.log('Facebook login'));
+        document.querySelector('.google-btn')?.addEventListener('click', () => { window.location.href = APP_LOGIN; });
+        document.querySelector('.facebook-btn')?.addEventListener('click', () => { window.location.href = APP_LOGIN; });
     </script>
 </body>
 </html>
