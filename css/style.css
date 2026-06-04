@@ -181,7 +181,7 @@ a:hover { color: var(--red); }
 }
 .logo a { color: inherit !important; }
 .logo span {
-    font-style: italic;
+    font-style: normal;
     color: var(--red);
     font-weight: 500;
 }
@@ -300,7 +300,7 @@ a:hover { color: var(--red); }
     letter-spacing: -0.01em !important;
     font-weight: 700 !important;
     color: var(--ink) !important;
-    font-style: italic;
+    font-style: normal;
 }
 .masthead-vol { text-align: left; }
 .masthead-date { text-align: right; }
@@ -366,7 +366,7 @@ a:hover { color: var(--red); }
     color: var(--ink-2);
     max-width: 700px;
     margin: 0 auto 1.6rem;
-    font-style: italic;
+    font-style: normal;
 }
 
 .feature-labels {
@@ -467,12 +467,12 @@ a:hover { color: var(--red); }
 }
 .section-header h2 span {
     color: var(--red);
-    font-style: italic;
+    font-style: normal;
     font-weight: 600;
 }
 .section-header p, .section-header .tagline {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.2rem;
     line-height: 1.5;
     color: var(--ink-soft);
@@ -481,7 +481,7 @@ a:hover { color: var(--red); }
 }
 .section-header .section-subtitle {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.2rem;
     color: var(--ink-soft);
 }
@@ -595,7 +595,7 @@ section::before {
     position: absolute;
     top: -28px; left: 30px;
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 3.4rem;
     line-height: 1;
     color: var(--red);
@@ -635,7 +635,7 @@ section::before {
     gap: .7rem;
     color: var(--paper);
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.4rem;
     margin-bottom: 1.4rem;
 }
@@ -675,7 +675,7 @@ section::before {
 }
 .use-case-list h3 {
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: clamp(1.6rem, 3vw, 2.4rem);
     color: var(--ink);
     margin-bottom: 2rem;
@@ -815,7 +815,7 @@ section::before {
 .partner-svg { width: 100%; height: 100%; }
 .logo-text {
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: 600;
     font-size: 18px;
     fill: var(--ink);
@@ -832,7 +832,7 @@ section::before {
 }
 .distribution-cta h3 {
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: clamp(1.6rem, 2.6vw, 2.2rem);
     color: var(--ink);
     margin-bottom: .8rem;
@@ -1035,7 +1035,7 @@ section::before {
 }
 .template-subtitle {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     color: var(--ink-soft);
     font-size: 1.05rem;
 }
@@ -1127,7 +1127,7 @@ section::before {
 }
 .template-tips > h4 {
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: clamp(1.6rem, 3vw, 2.2rem);
     text-align: center;
     margin-bottom: 3rem;
@@ -1220,7 +1220,7 @@ section::before {
 }
 .testimonial-quote p {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.12rem;
     line-height: 1.5;
     color: var(--ink);
@@ -1366,7 +1366,7 @@ section::before {
     letter-spacing: 0.18em;
     color: var(--ink-soft);
     margin: 1rem 0 0;
-    font-style: italic;
+    font-style: normal;
 }
 
 .testimonial-leave-wrap { text-align: center; margin-top: 3rem; }

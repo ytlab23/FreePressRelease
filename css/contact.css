@@ -18,7 +18,7 @@
 .contact-hero h1::first-letter { color: var(--red); }
 .contact-hero p {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.3rem;
     color: var(--ink-soft);
     max-width: 580px;
@@ -59,7 +59,7 @@
 .contact-info > p {
     color: var(--paper-2);
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     margin-bottom: 2rem;
     line-height: 1.55;
 }
@@ -202,7 +202,7 @@
 }
 .faq-cta p {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.2rem;
     color: var(--ink-soft);
 }

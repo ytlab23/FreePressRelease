@@ -59,11 +59,11 @@
             <div class="hero-masthead">
                 <span class="masthead-vol"></span>
                 <span class="masthead-name">The Free Press Release</span>
-                <span class="masthead-date">Daily Edition · Free Distribution</span>
+                <span class="masthead-date"></span>
             </div>
             <div class="hero-rule double"></div>
             <div class="hero-content">
-                <div class="hero-eyebrow"><span class="dot"></span><span>For Immediate Release</span><span class="dot"></span></div>
+                <div class="hero-eyebrow"><span class="dot"></span><span>Immediate Release</span><span class="dot"></span></div>
                 <h1>Submit &amp; Publish Your Press Release For Free!</h1>
                 <p class="subtitle">Skip the paywalls. Reach thousands with a free press release that gets indexed, discovered, and shared. Fast, SEO-optimized, and actually useful.</p>
 
@@ -322,7 +322,7 @@
                     <div class="comparison-row">
                         <div class="feature">Permanent URLs</div>
                         <div class="us yes">✅ Always Live</div>
-                        <div class="others no">❌ 30 Days Max</div>
+                        <div class="others no">❌ Temporary</div>
                     </div>
                 </div>
                 
@@ -775,7 +775,7 @@
                             <p>Using Free Press Release was a game-changer for our startup. We got featured in 3 major publications within 24 hours of submission!</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGDzQsmnLr0EA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682158293176?e=1756339200&v=beta&t=PO2eAqrW8L7cb5vE4wwEVZg5kIENGnhp5wbALTIHOoI" alt="Issac" class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Issac" class="author-avatar" loading="lazy">
                             <div class="author-info">
                                 <h4>Issac</h4>
                                 <span class="author-title">CEO, TechStart Inc.</span>
@@ -813,7 +813,7 @@
                             <p>As a small business owner, I was skeptical about free press releases. But the results blew me away - we got our first major client through a journalist who found us!</p>
                         </div>
                         <div class="testimonial-author">
-                            <img src="https://media.licdn.com/dms/image/v2/D5603AQHXfrtKhi-jmw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721286315324?e=1756339200&v=beta&t=Tba-XC_ihvjFvprv-XqjLSd8qYefEqzICIegR19X94A" alt="Pathak.A" class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen" class="author-avatar" loading="lazy">
                             <div class="author-info">
                                 <h4>Michael Chen</h4>
                                 <span class="author-title">Project Manager, GreenHerbs</span>
@@ -1059,6 +1059,7 @@
 
                 </div>
             </div>
+        </div>
 </section>
 <!-- Benefits of Free Press Release Section -->
     <section id="benefits" class="benefits-section">
@@ -1592,7 +1593,7 @@
                 <p>That's why we've created the simplest way to submit a free press release and actually get seen — by people, search engines, and even Google News.</p>
                 
                 <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                <p>To make press release distribution easy, accessible, and affordable — starting with free.</p>
+                <p>To make press release distribution easy, accessible, and free.</p>
                 
                 <h3><i class="fas fa-star"></i> Our Values</h3>
                 
@@ -1675,6 +1676,7 @@
                     <li><a href="/press">Press Releases</a></li>
                     <li><a href="http://freepressrelease.io/">Free Press Release</a></li>
                     <li><a href="#faq">FAQs</a></li>
+                    <li><a href="/press/report">Report a Press Release</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
                 </ul>
@@ -1691,56 +1693,11 @@
 
 
     <script src="js/main.js"></script>
-    
+    <script src="js/template-builder.js"></script>
+
     <!-- Template Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Template functionality script
-            const templateForm = document.getElementById('template-form');
-            const previewTitle = document.getElementById('preview-title');
-            const previewDate = document.getElementById('preview-date');
-            const previewLocation = document.getElementById('preview-location');
-            const previewContent = document.getElementById('preview-content');
-            const previewContactName = document.getElementById('preview-contact-name');
-            const previewContactEmail = document.getElementById('preview-contact-email');
-            const previewContactPhone = document.getElementById('preview-contact-phone');
-            const previewWebsite = document.getElementById('preview-website');
-            
-            // Set current date as default
-            const today = new Date();
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            previewDate.textContent = today.toLocaleDateString('en-US', options);
-            
-            // Update preview on input
-            if (templateForm) {
-                templateForm.addEventListener('input', function(e) {
-                    const target = e.target;
-                    
-                    if (target.matches('#template-title')) {
-                        previewTitle.textContent = target.value || 'FOR IMMEDIATE RELEASE';
-                    } else if (target.matches('#template-location')) {
-                        previewLocation.textContent = target.value ? `${target.value} — ` : '';
-                    } else if (target.matches('#template-content')) {
-                        previewContent.innerHTML = target.value.split('\n').map(paragraph => 
-                            paragraph.trim() ? `<p>${paragraph}</p>` : ''
-                        ).join('');
-                    } else if (target.matches('#template-contact-name')) {
-                        previewContactName.textContent = target.value || 'Media Contact';
-                    } else if (target.matches('#template-contact-email')) {
-                        previewContactEmail.textContent = target.value || 'email@example.com';
-                        previewContactEmail.href = `mailto:${target.value || 'email@example.com'}`;
-                    } else if (target.matches('#template-contact-phone')) {
-                        previewContactPhone.textContent = target.value || '(123) 456-7890';
-                        previewContactPhone.href = `tel:${target.value || '1234567890'}`;
-                    } else if (target.matches('#template-website')) {
-                        previewWebsite.textContent = target.value || 'www.example.com';
-                        previewWebsite.href = target.value ? 
-                            (target.value.startsWith('http') ? target.value : `https://${target.value}`) : 
-                            'https://www.example.com';
-                    }
-                });
-            }
-            
             // FAQ functionality
             const faqQuestions = document.querySelectorAll('.faq-question');
             
@@ -1890,7 +1847,6 @@
   
       if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-          console.log("Hamburger clicked");
           navLinks.classList.toggle('active');
         });
       }

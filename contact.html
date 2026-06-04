@@ -69,7 +69,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Call Us</h3>
-                            <a href="tel:+1234567890">+1 (234) 567-890</a>
+                            <a href="tel:+17828013932">+1 (782) 801-3932</a>
                         </div>
                     </div>
                     
@@ -79,7 +79,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Visit Us</h3>
-                            <p>123 Press Street<br>New York, NY 10001<br>United States</p>
+                            <p>4550 New Linden Hill<br>Wilmington, DE 19808<br>United States</p>
                         </div>
                     </div>
                     
@@ -104,7 +104,11 @@
                 
                 <div class="contact-form-container">
                     <h2>Send Us a Message</h2>
-                    <form class="contact-form">
+                    <form class="contact-form" id="contact-form" novalidate>
+                        <!-- Honeypot: hidden from people, catches bots -->
+                        <div aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+                            <label>Website<input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off"></label>
+                        </div>
                         <div class="form-group">
                             <label for="name">Full Name</label>
                             <input type="text" id="name" name="name" required>
@@ -126,6 +130,7 @@
                         </div>
                         
                         <button type="submit" class="submit-btn">Send Message</button>
+                        <p class="form-status" id="contact-status" role="status" aria-live="polite" style="margin-top:1rem;"></p>
                     </form>
                 </div>
             </div>
@@ -179,6 +184,7 @@
                     <li><a href="/press">Press Releases</a></li>
                     <li><a href="http://freepressrelease.io/">Free Press Release</a></li>
                     <li><a href="index.html#faq">FAQs</a></li>
+                    <li><a href="/press/report">Report a Press Release</a></li>
                     <li><a href="privacy-policy.html">Privacy Policy</a></li>
                     <li><a href="terms-of-use.html">Terms of Use</a></li>
                 </ul>
@@ -190,5 +196,57 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+      // Wire the contact form to the portal's /api/contact endpoint (proxied to
+      // the portal app via Netlify _redirects). Delivers to the PR inbox over
+      // the portal's existing SMTP — no page-reload, no data lost.
+      (function () {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+        var statusEl = document.getElementById('contact-status');
+        var btn = form.querySelector('.submit-btn');
+        function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var payload = {
+            name: val('name'),
+            email: val('email'),
+            subject: val('subject'),
+            message: val('message'),
+            website: val('contact-website')
+          };
+          if (!payload.name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email) || payload.message.length < 10) {
+            statusEl.style.color = '#c0392b';
+            statusEl.textContent = 'Please enter your name, a valid email, and a message (10+ characters).';
+            return;
+          }
+          var original = btn.textContent;
+          btn.disabled = true;
+          btn.textContent = 'Sending…';
+          statusEl.textContent = '';
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(payload)
+          })
+            .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+            .then(function (res) {
+              if (res.ok && res.d && res.d.ok) {
+                form.reset();
+                statusEl.style.color = '#4a7c3a';
+                statusEl.textContent = "Thanks — your message has been sent. We'll be in touch.";
+              } else {
+                statusEl.style.color = '#c0392b';
+                statusEl.textContent = (res.d && res.d.error) || 'Could not send your message. Please try again.';
+              }
+            })
+            .catch(function () {
+              statusEl.style.color = '#c0392b';
+              statusEl.textContent = 'Network error. Please try again.';
+            })
+            .then(function () { btn.disabled = false; btn.textContent = original; });
+        });
+      })();
+    </script>
 </body>
 </html>

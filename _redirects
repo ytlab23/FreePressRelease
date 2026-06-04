@@ -14,6 +14,10 @@
 # unstyled. This is safe: the static site never uses /_next itself.
 /_next/*              https://my.freepressrelease.io/_next/:splat        200
 
+# Contact form (contact.html) POSTs here; proxied to the portal API so it's
+# same-origin (no CORS) and delivers via the portal's SMTP. Netlify proxies POST.
+/api/contact          https://my.freepressrelease.io/api/contact        200
+
 # DB-backed sitemap + RSS for the release pages.
 /press-sitemap.xml    https://my.freepressrelease.io/sitemap.xml        200
 /press-rss.xml        https://my.freepressrelease.io/rss                200

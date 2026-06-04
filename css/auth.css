@@ -32,7 +32,7 @@
     bottom: -2.5rem;
     right: -3rem;
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     font-size: clamp(8rem, 18vw, 22rem);
     line-height: .8;
@@ -100,14 +100,14 @@
 }
 .auth-aside h1::first-letter { color: var(--red); }
 .auth-aside h1 em {
-    font-style: italic;
+    font-style: normal;
     color: var(--red);
     font-weight: 600;
 }
 
 .auth-aside .auth-lede {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.25rem;
     line-height: 1.5;
     color: var(--ink-2);
@@ -211,7 +211,7 @@
 
 .auth-card-head p {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.05rem;
     color: var(--ink-soft);
     margin: 0;
@@ -276,7 +276,7 @@
 
 .auth-form input::placeholder {
     color: var(--ink-muted);
-    font-style: italic;
+    font-style: normal;
 }
 
 .input-wrap {

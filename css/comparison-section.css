@@ -12,7 +12,7 @@
 }
 .comparison-intro p {
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.15rem;
     color: var(--ink-soft);
     margin-bottom: 1.2rem;
@@ -128,7 +128,7 @@
     color: var(--ink-soft);
     margin-bottom: 1.8rem;
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.08rem;
 }
 
@@ -178,7 +178,7 @@
 .cta-box.editorial-cta p {
     color: var(--paper-2);
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.15rem;
     max-width: 540px;
     margin: 0 auto 2rem;
@@ -244,12 +244,12 @@
 }
 .gradient-text {
     color: var(--red);
-    font-style: italic;
+    font-style: normal;
 }
 .cta-subtext {
     color: var(--ink-soft);
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.12rem;
     margin-bottom: 2rem;
     max-width: 600px;
@@ -271,7 +271,7 @@
 }
 .best-pr-sites .section-header .tagline {
     font-family: 'Instrument Serif', serif !important;
-    font-style: italic;
+    font-style: normal;
     color: var(--red) !important;
     font-weight: 500 !important;
     font-size: 1.25rem !important;
@@ -419,7 +419,7 @@
     text-align: center;
     color: var(--ink-soft);
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     max-width: 600px;
     margin: 0 auto 2.5rem !important;
 }

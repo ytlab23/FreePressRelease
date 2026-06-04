@@ -63,7 +63,7 @@
 }
 .conclusion-text span {
     color: var(--red-bright);
-    font-style: italic;
+    font-style: normal;
     font-weight: 600;
 }
 

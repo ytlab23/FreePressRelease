@@ -64,7 +64,7 @@
 }
 .footer-logo a { color: var(--paper) !important; }
 .footer-logo span {
-    font-style: italic;
+    font-style: normal;
     color: var(--red-bright);
     font-weight: 500;
 }
@@ -72,7 +72,7 @@
 .footer-description {
     color: var(--paper-2);
     font-family: 'Instrument Serif', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.05rem;
     line-height: 1.5;
     margin-bottom: 1.4rem;
@@ -103,7 +103,7 @@
 
 .footer-email {
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-size: 1.4rem;
     color: var(--paper) !important;
     margin-bottom: 1.4rem;

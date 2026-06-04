@@ -48,7 +48,7 @@
     left: 1.6rem;
     top: 1.8rem;
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     color: var(--red);
     font-size: 1.4rem;
@@ -94,7 +94,7 @@
     left: 1.6rem;
     top: 0;
     font-family: 'Fraunces', serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: 700;
     color: var(--ink);
     font-size: 1.4rem;

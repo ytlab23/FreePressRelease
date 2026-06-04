@@ -5,6 +5,6 @@
     font-style: normal;
 }
 .what-is .section-header h2 span {
-    font-style: italic;
+    font-style: normal;
     color: var(--red);
 }
