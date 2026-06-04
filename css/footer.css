@@ -175,3 +175,19 @@
     .footer-logo { font-size: 1.8rem !important; }
     .footer-email { font-size: 1.15rem; }
 }
+
+/* === Brand logo lockup: white icon + wordmark on the dark footer === */
+.footer-logo a {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.6rem;
+}
+.footer-logo .footer-logo-img {
+    height: 2.8rem;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+@media (max-width: 768px) {
+    .footer-logo .footer-logo-img { height: 2.3rem; }
+}
